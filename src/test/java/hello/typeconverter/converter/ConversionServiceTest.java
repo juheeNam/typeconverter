@@ -2,7 +2,6 @@ package hello.typeconverter.converter;
 
 
 import hello.typeconverter.type.IpPort;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.convert.support.DefaultConversionService;
 
@@ -17,7 +16,7 @@ public class ConversionServiceTest {
         conversionService.addConverter(new StringToIntegerConverter());
         conversionService.addConverter(new IntegerToStringConverter());
         conversionService.addConverter(new StringToIpPortConverter());
-        conversionService.addConverter(new IpPortConverterToString());
+        conversionService.addConverter(new IpPortToStringConverter());
 
         // 사용
         assertThat(conversionService.convert("10", Integer.class)).isEqualTo(10);
